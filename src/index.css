@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@305;400;500;600;700&family=Playfair+Display:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  /* Artistic Flair Core Palette mapped to Tailwind presets */
+  --color-stone-950: #fdfcf8; /* Page Background (cream) */
+  --color-stone-900: #ffffff; /* Secondary Background / Card Background (white) */
+  --color-stone-850: #f5f2ed; /* Accent Background (warm beige) */
+  --color-stone-800: #e5e1d8; /* Border colors (subtle border beige) */
+
+  --color-stone-100: #2d2a26; /* Primary body text (charcoal) */
+  --color-stone-200: #1a2e26; /* Large display headers / forest green */
+  --color-stone-300: #2d2a26; /* Alternative dark charcoal text */
+  --color-stone-400: #5a5650; /* Readable description text */
+  --color-stone-500: #8c867a; /* Muted text */
+  --color-stone-600: #b35a38; /* Terracotta accents */
+  
+  --color-amber-500: #b35a38; /* Terracotta secondary details */
+  --color-amber-600: #1a2e26; /* Main Forest green action CTA */
+  --color-amber-750: #12211b; /* Pressed CTA */
+  --color-amber-400: #c5a059; /* Gold ratings */
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  body {
+    @apply bg-stone-950 text-stone-100 antialiased selection:bg-amber-500 selection:text-white;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  /* Custom minimal luxury scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #fdfcf8; /* cream */
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #e5e1d8; /* border */
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #b35a38; /* terracotta */
+  }
+}
+
+/* Fluid responsive layout customizations */
+.grayscale {
+  filter: grayscale(100%);
+}
+
+.invert {
+  filter: invert(90%) hue-rotate(180deg);
+}
+
+.animate-spin-slow {
+  animation: spin 15s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

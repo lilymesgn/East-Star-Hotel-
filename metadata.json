@@ -1,0 +1,6 @@
+{
+  "name": "East Star Hotel",
+  "description": "Multi-page premium lodging website for East Star Hotel in Dire Dawa, Ethiopia.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
